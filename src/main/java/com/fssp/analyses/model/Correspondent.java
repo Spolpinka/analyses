@@ -5,10 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.xml.bind.annotation.XmlElement;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Correspondent {
 
-    private String CorrespondentName;
+    @XmlElement(name = "CorrespondentName")
+    private String correspondentName;
 }
