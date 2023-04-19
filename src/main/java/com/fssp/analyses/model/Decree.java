@@ -4,23 +4,32 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Decree {
-    private long OIpId;
 
-    private long IpId;
+    @XmlElement(name = "OIpId")
+    private long oIpId;
 
-    private String DocNumber;
+    @XmlElement(name = "IpId")
+    private long ipId;
 
-    private String DocDate;
+    @XmlElement(name = "DocNumber")
+    private String docNumber;
 
+    @XmlElement(name = "DocDate")
+    private String docDate;
+
+    @XmlElement(name = "DocType")
     private String DocType;
 
-    private String DocTypeName;
+    @XmlElement(name = "DocTypeName")
+    private String docTypeName;
 
+    @XmlElement(name = "Correspondents")
     private List<Correspondent> correspondentList;
 }
